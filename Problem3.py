@@ -2,13 +2,12 @@
 
 
 sentence = input("Enter a sentence: ")
+words = sentence.split()
 
-words = sentence.split()  # split the sentence into words
-num_words = len(words)   # count the number of words
-total_length = sum(len(word) for word in words)  # sum the length of each word
+print("Length of each word:")
+for word in words:
+    print(word + ":", len(word))
 
-average_length = total_length / num_words  # calculate the average length
+avg_word_length = sum(len(word) for word in words) / len(words)
+print("Average word length: {:.2f}".format(avg_word_length))
 
-print(words)
-print(len(words))
-print("The average word length in the sentence is:", round(average_length, 2))
